@@ -140,12 +140,7 @@
   <h1 class="page-title">Secure <span>Payment</span></h1>
 
   <!-- ── PAYMENT DETAILS SECTION (QR/UPI, RAZORPAY, PAYPAL) ── -->
-  <div class="payment-box">
-    <h2>// Transfer Details</h2>
-    <p>Please use the method below to send the advance payment and confirm your slot.</p>
-    
-    <!-- CURRENT ACTIVE METHOD: QR CODE & UPI -->
-    <!-- In future, when adding Razorpay, you can comment this block out or remove it -->
+ <!-- CURRENT ACTIVE METHOD: QR CODE & UPI -->
     <div class="payment-method-active" id="upi-section">
       <div class="payment-details">
         <span>Scan QR Code or Pay via UPI:</span>
@@ -153,8 +148,14 @@
         <!-- Apne QR code image ka link/path 'src' me daalein -->
         <img src="qr_code.png" alt="Payment QR Code" class="qr-code-img">
         
-        <span class="upi-id">paytmqr6ex9gc@ptys</span> <!-- APNI UPI ID YAHAN DAALEIN -->
-        <span style="font-size: 0.85rem; color: var(--muted);">Name: SHIVAM KUMAR</span>
+        <span class="upi-id">paytmqr6ex9gc@ptys</span>
+        <span style="font-size: 0.85rem; color: var(--muted); display: block; margin-bottom: 15px;">Name: SHIVAM KUMAR</span>
+        
+        <!-- ── DIRECT UPI PAYMENT LINK ADDED HERE ── -->
+        <a href="upi://pay?pa=paytmqr6ex9gc@ptys&pn=SHIVAM%20KUMAR&cu=INR" class="btn-primary" style="display: inline-block; text-decoration: none; padding: 0.8rem 1.5rem;">
+          Pay Directly via UPI App ↗
+        </a>
+
       </div>
       <p style="font-size: 0.85rem; color: var(--muted);">After sending the payment, please attach the screenshot below.</p>
     </div>
