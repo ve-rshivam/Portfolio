@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Payment Portal | SHIVAM KUMAR SINGH</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #050508; --bg2: #0d0d14; --bg3: #12121c;
+    --accent: #00f5a0; --accent2: #00b8ff;
+    --text: #e8e8f0; --muted: #6b6b85;
+    --border: rgba(0,245,160,0.12);
+    --mono: 'JetBrains Mono', monospace; --sans: 'Syne', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.8; }
+  
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999; opacity: .4;
+  }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 6vw; background: rgba(5,5,8,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: var(--mono); font-size: .95rem; color: var(--accent); text-decoration: none; }
+  .nav-logo span { color: var(--muted); }
+  .back-btn { font-family: var(--mono); font-size: .85rem; color: var(--text); text-decoration: none; border: 1px solid var(--border); padding: 0.5rem 1rem; border-radius: 4px; transition: 0.3s; }
+  .back-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* CONTAINER */
+  .container { max-width: 900px; margin: 120px auto 80px auto; padding: 0 6vw; display: grid; gap: 3rem; }
+  
+  .page-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; text-align: center; }
+  .page-title span { color: transparent; -webkit-text-stroke: 1px var(--accent); }
+
+  /* PAYMENT BOX */
+  .payment-box { background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; text-align: center; }
+  .payment-box h2 { color: var(--accent); margin-bottom: 1rem; font-family: var(--mono); }
+  .payment-details { background: var(--bg2); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; font-family: var(--mono); font-size: 1.1rem; border: 1px dashed var(--muted); }
+  .upi-id { color: var(--accent2); font-weight: bold; font-size: 1.3rem; margin: 10px 0; display: block; }
+  
+  /* DYNAMIC REFUND BOX */
+  .dynamic-policy-box { background: rgba(255, 77, 109, 0.05); border: 1px solid rgba(255, 77, 109, 0.3); border-radius: 12px; padding: 2.5rem; position: relative; }
+  .dynamic-policy-box::before { content: 'Synced from legal.html'; position: absolute; top: 10px; right: 15px; font-family: var(--mono); font-size: 0.65rem; color: var(--muted); }
+  
+  /* Loading state */
+  #fetched-refund-content { font-size: 0.95rem; color: var(--muted); }
+  #fetched-refund-content .section-heading { color: #ff4d6d; font-family: var(--mono); margin-bottom: 1rem; font-size: 1.2rem;}
+  #fetched-refund-content ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+  #fetched-refund-content .highlight { color: #fff; font-weight: bold; }
+
+  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); margin-top: 4rem; font-size: 0.9rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><span>~/</span>portfolio</a>
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</nav>
+
+<div class="container">
+  <h1 class="page-title">Secure <span>Payment</span></h1>
+
+  <!-- PAYMENT DETAILS -->
+  <div class="payment-box">
+    <h2>// Transfer Details</h2>
+    <p>Please send the discussed advance payment to confirm your slot.</p>
+    
+    <div class="payment-details">
+      <span>UPI / GPay / PhonePe:</span>
+      <span class="upi-id">your.upi@bankname</span> <!-- APNI UPI ID YAHAN DAALEIN -->
+      <br>
+      <span style="font-size: 0.85rem; color: var(--muted);">Name: SHIVAM KUMAR SINGH</span>
+    </div>
+
+    <p style="font-size: 0.85rem; color: var(--muted);">After payment, please take a screenshot and share it via Email or Contact Form.</p>
+  </div>
+
+  <!-- REFUND POLICY (Dynamically Fetched) -->
+  <div class="dynamic-policy-box">
+    <div id="fetched-refund-content">
+      <p style="text-align: center;">Loading Refund Policy...</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 SHIVAM KUMAR SINGH. All rights reserved.
+</footer>
+
+<!-- ── MAGIC JAVASCRIPT: Fetching Refund Policy from legal.html ── -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Ye code legal.html file ko read karega
+    fetch('legal.html')
+      .then(response => response.text())
+      .then(htmlData => {
+        // HTML ko parse karne ke liye parser
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlData, 'text/html');
+        
+        // legal.html se '#refund' ID wala div uthana
+        const refundSection = doc.querySelector('#refund');
+        
+        // Agar mil gaya, toh payment page me daal do
+        if (refundSection) {
+          document.getElementById('fetched-refund-content').innerHTML = refundSection.innerHTML;
+        } else {
+          document.getElementById('fetched-refund-content').innerHTML = "<p>Error: Refund policy couldn't be loaded.</p>";
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching policy:", error);
+        document.getElementById('fetched-refund-content').innerHTML = "<p>Error loading policy. Please visit Legal page directly.</p>";
+      });
+  });
+</script>
+
+</body>
+</html>
