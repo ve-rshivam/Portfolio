@@ -723,15 +723,25 @@
 
 <!-- ── FOOTER ── -->
 <style>
-.footer-link {
+.white-link,
+.green-link {
     text-decoration: none;
-    color: white;
     font-weight: bold;
-    transition: 0.3s ease;
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.footer-link:hover {
+.white-link {
+    color: white;
+}
+
+.green-link {
     color: #00f5a0;
+}
+
+.white-link:hover,
+.green-link:hover {
+    transform: scale(1.3);
     opacity: 0.8;
 }
 </style>
@@ -739,14 +749,14 @@
 <footer>
   <p>
     Built with 
-    <a href="https://www.instagram.com/ve.rshivam" target="_blank" class="footer-link">❤</a> 
+    <a href="https://github.com/ve-rshivam" target="_blank" class="green-link">❤</a> 
     &amp; lots of 
-    <a href="https://github.com/ve-rshivam" target="_blank" class="footer-link">{ ❤ }</a>
+    <a href="https://www.instagram.com/ve.rshivam" target="_blank" class="white-link">{ ❤ }</a>
   </p>
 
   <p>
     © 2026 
-    <a href="https://www.linkedin.com/in/ve8rshivam" target="_blank" class="footer-link">
+    <a href="https://www.linkedin.com/in/ve8rshivam" target="_blank" class="green-link">
       SHIVAM KUMAR SINGH
     </a> 
     — All rights reserved
