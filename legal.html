@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Legal Information | SHIVAM KUMAR SINGH</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #050508;
+    --bg2: #0d0d14;
+    --bg3: #12121c;
+    --accent: #00f5a0;
+    --accent2: #00b8ff;
+    --text: #e8e8f0;
+    --muted: #6b6b85;
+    --border: rgba(0,245,160,0.12);
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Syne', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* SCROLL PADDING BOHOT ZAROORI HAI: Taki navigation bar content ko na chupaye */
+  html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 120px; 
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    overflow-x: hidden;
+    line-height: 1.8;
+  }
+
+  /* NOISE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999; opacity: .4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 6vw;
+    background: rgba(5,5,8,0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: .95rem;
+    color: var(--accent);
+    letter-spacing: .05em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--muted); }
+  
+  .back-btn {
+    font-family: var(--mono);
+    font-size: .85rem;
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  .back-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* MAIN CONTENT */
+  .legal-container {
+    max-width: 900px;
+    margin: 120px auto 80px auto;
+    padding: 0 6vw;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .page-title span {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--accent);
+  }
+
+  .legal-section {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  .legal-section::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--accent);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  .section-heading {
+    font-family: var(--mono);
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 0.5rem;
+  }
+
+  .legal-section p, .legal-section li {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .legal-section ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .highlight {
+    color: var(--accent2);
+    font-weight: bold;
+  }
+
+  /* FOOTER (Same as index.html) */
+  footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #0f172a;
+    color: white; 
+    font-family: Arial, sans-serif;
+  }
+  .footer-line {
+    display: flex; justify-content: center; align-items: center;
+    gap: 8px; flex-wrap: wrap; margin-top: 10px;
+  }
+  .white-text { color: #ffffff; font-weight: bold; }
+  .green-link { text-decoration: none; font-weight: bold; display: inline-block; color: #00f5a0; transition: transform 0.3s; }
+  .green-link:hover { transform: scale(1.1); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo"><span>~/</span>portfolio</a>
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</nav>
+
+<!-- CONTENT -->
+<div class="legal-container">
+  <h1 class="page-title">Legal <span>Information</span></h1>
+
+  <!-- PRIVACY POLICY SECTION -->
+  <section id="privacy" class="legal-section">
+    <h2 class="section-title section-heading">// Privacy Policy</h2>
+    <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website or services.</p>
+    <ul>
+      <li>We may collect your name, email address, and contact details when you fill out our contact form.</li>
+      <li>Your information is strictly used for communication and project-related discussions.</li>
+      <li>We do not sell, trade, or rent your personal identification information to third parties.</li>
+    </ul>
+    <p>By using this website, you consent to our collection and use of your information as described in this policy.</p>
+  </section>
+
+  <!-- TERMS AND CONDITIONS SECTION -->
+  <section id="terms" class="legal-section">
+    <h2 class="section-title section-heading">// Terms & Conditions</h2>
+    <p>By engaging in any project or service with SHIVAM KUMAR SINGH, you agree to the following terms and conditions:</p>
+    <ul>
+      <li><strong>Project Scope:</strong> All project requirements must be clearly defined before the commencement of the work. Any additional features requested later will be billed separately.</li>
+      <li><strong>Revision Limits:</strong> To maintain project timelines and quality, the client is entitled to a maximum of <span class="highlight">3 to 4 rounds of revisions</span> during the project lifecycle.</li>
+      <li><strong>Out of Scope Changes:</strong> Any revisions or complete redesigns requested after the 4th round will be subject to <span class="highlight">additional charges</span> at an agreed-upon hourly or fixed rate.</li>
+      <li><strong>Delays:</strong> We are not responsible for project delays caused by the client's failure to provide necessary assets or feedback in a timely manner.</li>
+    </ul>
+  </section>
+
+  <!-- REFUND POLICY SECTION -->
+  <section id="refund" class="legal-section">
+    <h2 class="section-title section-heading">// Refund & Payment Policy</h2>
+    <p>We maintain strict payment protocols to ensure mutual commitment to the project:</p>
+    <ul>
+      <li><strong>Advance Payment:</strong> A strictly <span class="highlight">non-refundable advance payment of 50%</span> of the total project cost is required before any development, design, or research work begins.</li>
+      <li><strong>Why Non-Refundable?</strong> This advance secures your spot in our schedule and covers the initial time and resources invested in project planning. If you choose to cancel the project midway, the advance will not be refunded.</li>
+      <li><strong>Final Payment:</strong> The remaining 50% balance must be paid in full upon the final delivery and approval of the project, before the final source code or files are handed over.</li>
+    </ul>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-line">
+    <span class="white-text">© 2026</span>
+    <a href="index.html" class="green-link">SHIVAM KUMAR SINGH</a>
+    <span class="white-text">— All rights reserved.</span>
+  </p>
+</footer>
+
+</body>
+</html>
