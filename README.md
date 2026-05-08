@@ -70,10 +70,10 @@ in your browser.
 
 [---](https://ve-rshivam.github.io/Portfolio/)
 
-# 📸 Preview
+## Preview
 
+![Portfolio Screenshot](screenshot.png)
 
-![Portfolio Preview](assets/screenshot.png )
 
 # 👨‍💻 Author
 
