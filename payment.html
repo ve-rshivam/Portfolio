@@ -141,6 +141,7 @@
 
   <!-- ── PAYMENT DETAILS SECTION (QR/UPI, RAZORPAY, PAYPAL) ── -->
  <!-- CURRENT ACTIVE METHOD: QR CODE & UPI -->
+   <!-- CURRENT ACTIVE METHOD: QR CODE & UPI -->
     <div class="payment-method-active" id="upi-section">
       <div class="payment-details">
         <span>Scan QR Code or Pay via UPI:</span>
@@ -148,18 +149,20 @@
         <!-- Apne QR code image ka link/path 'src' me daalein -->
         <img src="qr_code.png" alt="Payment QR Code" class="qr-code-img">
         
+        <!-- 1. UPI ID -->
         <span class="upi-id">paytmqr6ex9gc@ptys</span>
-        <span style="font-size: 0.85rem; color: var(--muted); display: block; margin-bottom: 15px;">Name: SHIVAM KUMAR</span>
         
-        <!-- ── DIRECT UPI PAYMENT LINK ADDED HERE ── -->
-        <a href="upi://pay?pa=paytmqr6ex9gc@ptys&pn=SHIVAM%20KUMAR&cu=INR" class="btn-primary" style="display: inline-block; text-decoration: none; padding: 0.8rem 1.5rem;">
+        <!-- 2. DIRECT UPI PAYMENT LINK (Beech me) -->
+        <a href="upi://pay?pa=paytmqr6ex9gc@ptys&pn=SHIVAM%20KUMAR&cu=INR" class="btn-primary" style="display: inline-block; text-decoration: none; padding: 0.8rem 1.5rem; margin: 5px 0 15px 0;">
           Pay Directly via UPI App ↗
         </a>
 
+        <!-- 3. NAME -->
+        <span style="font-size: 0.85rem; color: var(--muted); display: block;">Name: SHIVAM KUMAR</span>
+        
       </div>
       <p style="font-size: 0.85rem; color: var(--muted);">After sending the payment, please attach the screenshot below.</p>
     </div>
-
     <!-- ───────────────────────────────────────────────────────── -->
     <!-- FUTURE INTEGRATION: RAZORPAY (Uncomment to use in future) -->
     <!-- ───────────────────────────────────────────────────────── -->
