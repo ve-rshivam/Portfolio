@@ -719,11 +719,26 @@
 </section>
 
 <!-- ── CONTACT ── -->
+<!-- ── CONTACT & DIRECT EMAIL FORM ── -->
 <section id="contact">
   <div class="contact-wrap reveal">
     <div class="section-label">04 — contact</div>
-    <h2 class="section-title">Let's Connect</h2>
-    <p class="contact-sub">I'm open to internships, collaborations, or just a good conversation about DSA and tech. Feel free to reach out!</p>
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="contact-sub">Fill out the form below to send an email directly to me, or connect via social links.</p>
+    
+    <!-- WEB3FORMS CONTACT FORM (No Backend Required) -->
+    <!-- REPLACE 'YOUR_ACCESS_KEY_HERE' with your free key from https://web3forms.com/ -->
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+      <input type="hidden" name="subject" value="New message from your Portfolio!">
+      
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Write your message or project details here..." required></textarea>
+      
+      <button type="submit" class="btn-primary">Send Email ↗</button>
+    </form>
+
     <div class="contact-links">
       <a href="mailto:getus.shivam@gmail.com" class="contact-link"><span>✉</span> Email Me</a>
       <a href="https://github.com/ve-rshivam" target="_blank" class="contact-link"><span>⬡</span> GitHub</a>
@@ -731,8 +746,8 @@
       <a href="https://instagram.com/ve.rshivam" target="_blank" class="contact-link"><span>◈</span> Instagram</a>
       <a href="https://twitter.com/ve8rshivam" target="_blank" class="contact-link"><span>𝕏</span> Twitter / X</a>
     </div>
-  </div>
 </section>
+
 
 <!-- ── FOOTER ── -->
 <footer>
