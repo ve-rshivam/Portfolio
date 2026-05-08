@@ -73,7 +73,7 @@ in your browser.
 # 📸 Preview
 
 
---- screenshot.png
+---screenshot.png
 
 # 👨‍💻 Author
 
