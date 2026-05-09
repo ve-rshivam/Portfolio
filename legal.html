@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- ── META & TITLE ── -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Legal Information | SHIVAM KUMAR SINGH</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
+<!-- ── GLOBAL CSS STYLES ── -->
 <style>
   :root {
     --bg: #050508;
@@ -21,7 +24,7 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* SCROLL PADDING BOHOT ZAROORI HAI: Taki navigation bar content ko na chupaye */
+  /* SCROLL PADDING: Taki navigation bar content ko na chupaye jab kisi link par click ho */
   html { 
     scroll-behavior: smooth; 
     scroll-padding-top: 120px; 
@@ -35,7 +38,7 @@
     line-height: 1.8;
   }
 
-  /* NOISE OVERLAY */
+  /* NOISE OVERLAY EFFECT */
   body::before {
     content: '';
     position: fixed; inset: 0;
@@ -43,7 +46,7 @@
     pointer-events: none; z-index: 9999; opacity: .4;
   }
 
-  /* NAV */
+  /* ── NAVIGATION BAR ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
@@ -76,7 +79,7 @@
     color: var(--accent);
   }
 
-  /* MAIN CONTENT */
+  /* ── MAIN CONTENT LAYOUT ── */
   .legal-container {
     max-width: 900px;
     margin: 120px auto 80px auto;
@@ -95,6 +98,7 @@
     -webkit-text-stroke: 1px var(--accent);
   }
 
+  /* ── LEGAL SECTIONS STYLING ── */
   .legal-section {
     background: var(--bg3);
     border: 1px solid var(--border);
@@ -134,93 +138,23 @@
     color: var(--accent2);
     font-weight: bold;
   }
-
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 3rem 1rem;
-    background: #0f172a;
-    color: white; 
-    font-family: Arial, sans-serif;
-  }
-  .footer-line {
-    display: flex; justify-content: center; align-items: center;
-    gap: 8px; flex-wrap: wrap; margin-top: 10px;
-  }
-  .white-text { color: #ffffff; font-weight: bold; }
-  .green-link { text-decoration: none; font-weight: bold; display: inline-block; color: #00f5a0; transition: transform 0.3s; }
-  .green-link:hover { transform: scale(1.1); }
   
-  /* ADDED CSS FOR PAYMENT LINK */
-  .legal-links {
-    margin: 20px 0 30px 0;
-    font-family: var(--mono);
-    font-size: 0.85rem;
-  }
-  .legal-link-item {
+  /* Mail button styling for refund section */
+  .mail-link {
     color: var(--accent);
     text-decoration: none;
-    transition: color 0.3s, transform 0.3s;
-    display: inline-block;
+    font-family: var(--mono);
+    font-weight: bold;
+    padding: 2px 6px;
+    border: 1px dashed var(--accent);
+    border-radius: 4px;
+    transition: 0.3s;
   }
-  .legal-link-item:hover { 
-    color: #fff;
-    transform: translateY(-2px);
+  .mail-link:hover {
+    background: rgba(0, 245, 160, 0.1);
   }
-</style>
-</head>
-<body>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo"><span>~/</span>portfolio</a>
-  <a href="index.html" class="back-btn">← Back to Home</a>
-</nav>
-
-<!-- CONTENT -->
-<div class="legal-container">
-  <h1 class="page-title">Legal <span>Information</span></h1>
-
-  <!-- PRIVACY POLICY SECTION -->
-  <section id="privacy" class="legal-section">
-    <h2 class="section-title section-heading">// Privacy Policy</h2>
-    <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website or services.</p>
-    <ul>
-      <li>We may collect your name, email address, and contact details when you fill out our contact form.</li>
-      <li>Your information is strictly used for communication and project-related discussions.</li>
-      <li>We do not sell, trade, or rent your personal identification information to third parties.</li>
-    </ul>
-    <p>By using this website, you consent to our collection and use of your information as described in this policy.</p>
-  </section>
-
-  <!-- TERMS AND CONDITIONS SECTION -->
-  <section id="terms" class="legal-section">
-    <h2 class="section-title section-heading">// Terms & Conditions</h2>
-    <p>By engaging in any project or service with SHIVAM KUMAR SINGH, you agree to the following terms and conditions:</p>
-    <ul>
-      <li><strong>Project Scope:</strong> All project requirements must be clearly defined before the commencement of the work. Any additional features requested later will be billed separately.</li>
-      <li><strong>Revision Limits:</strong> To maintain project timelines and quality, the client is entitled to a maximum of <span class="highlight">3 to 4 rounds of revisions</span> during the project lifecycle.</li>
-      <li><strong>Out of Scope Changes:</strong> Any revisions or complete redesigns requested after the 4th round will be subject to <span class="highlight">additional charges</span> at an agreed-upon hourly or fixed rate.</li>
-      <li><strong>Delays:</strong> We are not responsible for project delays caused by the client's failure to provide necessary assets or feedback in a timely manner.</li>
-    </ul>
-  </section>
-
-  <!-- REFUND POLICY SECTION -->
-  <section id="refund" class="legal-section">
-    <h2 class="section-title section-heading">// Refund & Payment Policy</h2>
-    <p>We maintain strict payment protocols to ensure mutual commitment to the project:</p>
-    <ul>
-      <li><strong>Advance Payment:</strong> A strictly <span class="highlight">non-refundable advance payment of 50%</span> of the total project cost is required before any development, design, or research work begins.</li>
-      <li><strong>Why Non-Refundable?</strong> This advance secures your spot in our schedule and covers the initial time and resources invested in project planning. If you choose to cancel the project midway, the advance will not be refunded.</li>
-      <li><strong>Final Payment:</strong> The remaining 50% balance must be paid in full upon the final delivery and approval of the project, before the final source code or files are handed over.</li>
-    </ul>
-  </section>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <!-- ── FOOTER FOR LEGAL & PAYMENT (With Redirect) ── -->
-<style>
+  /* ── FOOTER CSS ── */
   .main-footer {
     text-align: center;
     padding: 4rem 6vw 3rem 6vw;
@@ -239,19 +173,18 @@
   .main-footer .sep { color: #6b6b85; margin: 0 12px; opacity: 0.3; }
   .main-footer .copyright-bar { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 20px; font-size: 0.85rem; color: #ffffff; }
 
-  /* ── SUBTLE NAME ANIMATION (NO GLOW, REDUCED ZOOM) ── */
+  /* SUBTLE NAME ANIMATION */
   .main-footer .name-link {
     text-decoration: none;
     font-weight: 800;
     display: inline-block;
     color: #00f5a0;
-    /* 0.2px zoom equivalent reduction - very subtle scale */
     transition: all 0.3s ease;
   }
   .main-footer .name-link:hover {
-    transform: scale(1.03) translateY(-2px); /* Very low zoom */
+    transform: scale(1.03) translateY(-2px);
     color: #00f5a0;
-    text-shadow: none; /* Glow removed */
+    text-shadow: none; 
   }
 
   .main-footer .heart-link { text-decoration: none; display: inline-block; transition: all 0.3s ease; }
@@ -265,7 +198,74 @@
     .main-footer .sep { display: none; }
   }
 </style>
+</head>
+<body>
 
+<!-- ── NAVIGATION BAR ── -->
+<nav>
+  <a href="index.html" class="nav-logo"><span>~/</span>portfolio</a>
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</nav>
+
+<!-- ── MAIN CONTENT: LEGAL SECTIONS ── -->
+<div class="legal-container">
+  <h1 class="page-title">Legal <span>Information</span></h1>
+
+  <!-- 1. PRIVACY POLICY SECTION -->
+  <section id="privacy" class="legal-section">
+    <h2 class="section-title section-heading">// Privacy Policy</h2>
+    <p>Your privacy is strictly respected here. This policy outlines how your data is handled during our professional engagement.</p>
+    <ul>
+      <li><strong>Information Collection:</strong> I only collect necessary details like your name, email address, and project specifications via forms or direct communication.</li>
+      <li><strong>Usage of Data:</strong> Your data is used exclusively to deliver the requested digital services and maintain project communication.</li>
+      <li><strong>Data Security:</strong> Your project ideas, source code (if provided by you), and contact info are never sold, traded, or shared with third parties without your explicit consent.</li>
+    </ul>
+  </section>
+
+  <!-- 2. TERMS AND CONDITIONS SECTION -->
+  <section id="terms" class="legal-section">
+    <h2 class="section-title section-heading">// Terms & Conditions</h2>
+    <p>To ensure a smooth workflow and avoid misunderstandings, the following terms apply to all freelance projects:</p>
+    <ul>
+      <li><strong>Clear Scope of Work:</strong> All features and requirements must be documented before starting. If new features are requested after the project begins (Scope Creep), they will be <span class="highlight">estimated and billed separately</span>.</li>
+      <li><strong>Revisions & Iterations:</strong> You are entitled to <span class="highlight">up to 3 rounds of revisions</span> for design/development tweaks. Complete redesigns or changes outside the original scope will incur additional charges.</li>
+      <!-- KEYS AND RIGHTS TRANSFER RULE ADDED HERE -->
+      <li><strong>Intellectual Property (IP) & Keys Transfer:</strong> I retain full ownership of all code, designs, API keys, and assets created <span class="highlight">until the final payment is cleared</span>. Once the final payment is successfully received, all agreed-upon IP rights, ownership, and credentials will be fully transferred to you.</li>
+      <li><strong>Communication & Ghosting:</strong> Timely feedback is crucial. If a client fails to communicate for more than 14 days without prior notice, the project will be put on hold, and a restart fee may apply to resume work.</li>
+    </ul>
+  </section>
+
+  <!-- 3. REFUND POLICY SECTION -->
+  <!-- Note: Payment.html fetches this EXACT #refund section using JavaScript -->
+  <section id="refund" class="legal-section">
+    <h2 class="section-title section-heading">// Refund & Payment Policy</h2>
+    <p>A fair payment structure protects both the client's investment and the developer's time.</p>
+    <ul>
+      <li><strong>Advance Payment:</strong> A <span class="highlight">50% advance payment</span> is mandatory to lock your slot and begin the project setup/research.</li>
+      
+      <!-- COOL DOWN PERIOD -->
+     <!-- COOL DOWN PERIOD (Updated with Gateway Charge Logic) -->
+      <li><strong>24-Hour Cool-Down Period:</strong> I offer a grace period! If you change your mind within <span class="highlight">24 hours of making the advance payment</span> (and provided no actual coding/design work has begun), you are eligible for a full refund, <span class="highlight">minus any third-party payment processing fees 5%</span>, as these are non-refundable by the gateway providers. 
+      <br><br>
+      To request a refund during this period, please email me immediately at: 
+      <a href="mailto:getus.shivam@gmail.com?subject=Refund Request - [Your Name]&body=Hi Shivam,%0D%0A%0D%0AI would like to request a refund for the advance payment made. Please let me know the process.%0D%0A%0D%0AThanks!" class="mail-link">getus.shivam@gmail.com ↗</a>
+      </li>
+
+      <!-- POST COOL DOWN LOGIC ADDED HERE -->
+      <li><strong>Post Cool-Down Period:</strong> If you request a cancellation after the 24-hour grace period, the following rules apply:
+        <ul style="margin-top: 10px; margin-bottom: 10px;">
+          <li><span class="highlight">If work has NOT started:</span> A <strong>15% cancellation fee</strong> will be deducted from your advance payment to cover administrative and scheduling costs. The remaining amount will be refunded to you.</li>
+          <li><span class="highlight">If work has already started:</span> The advance payment becomes strictly <strong>non-refundable</strong>. This compensates for the time, blocked schedule, and development efforts already invested in your project.</li>
+        </ul>
+      </li>
+
+      <!-- FINAL PAYMENT HANDOVER EMPHASIS -->
+      <li><strong>Final Payment & Delivery:</strong> The final 50% balance must be cleared after you approve the final demo. <span class="highlight">Project rights, API keys, source files, and hosting credentials will ONLY be handed over after the final payment is successfully received.</span></li>
+    </ul>
+  </section>
+</div>
+
+<!-- ── FOOTER SECTION ── -->
 <footer class="main-footer">
   <p class="built-with">
     Built with 
@@ -273,6 +273,7 @@
     &amp; lots of 
     <a href="https://www.instagram.com/ve.rshivam" target="_blank" class="heart-link white-text">{ ❤ }</a>
   </p>
+  
   <p class="footer-nav">
     <a href="legal.html#privacy" class="footer-link">Privacy Policy</a>
     <span class="sep">|</span>
@@ -282,31 +283,12 @@
     <span class="sep">|</span>
     <a href="payment.html" class="footer-link pay-link">Payment</a>
   </p>
+  
+  <!-- Redirects back to index.html -->
   <p class="copyright-bar">
     <span style="font-weight: 600; opacity: 0.7;">© 2026</span>
-    <!-- Link changed to index.html -->
     <a href="index.html" class="name-link">SHIVAM KUMAR SINGH</a>
     <span style="opacity: 0.7;">— All rights reserved.</span>
-  </p>
-
-</footer>
-<script>
-
-  <!-- ADDED PAYMENT LINK HERE -->
-  <p class="legal-links">
-    <a href="legal.html#privacy" class="legal-link-item">Privacy Policy</a>
-    <span style="color: var(--muted); margin: 0 10px;">|</span>
-    <a href="legal.html#terms" class="legal-link-item">Terms &amp; Conditions</a>
-    <span style="color: var(--muted); margin: 0 10px;">|</span>
-    <a href="legal.html#refund" class="legal-link-item">Refund Policy</a>
-    <span style="color: var(--muted); margin: 0 10px;">|</span>
-    <a href="payment.html" class="legal-link-item">Payment</a>
-  </p>
-
-  <p class="footer-line">
-    <span class="white-text">© 2026</span>
-    <a href="https://www.linkedin.com/in/ve8rshivam" target="_blank" class="green-link name-link">SHIVAM KUMAR SINGH</a>
-    <span class="white-text">— All rights reserved.</span>
   </p>
 </footer>
 
