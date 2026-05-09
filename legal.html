@@ -9,6 +9,7 @@
 
 <!-- ── GLOBAL CSS STYLES ── -->
 <style>
+  /* ── GLOBAL VARIABLES ── */
   :root {
     --bg: #050508;
     --bg2: #0d0d14;
@@ -22,6 +23,7 @@
     --sans: 'Syne', sans-serif;
   }
 
+  /* ── BASIC RESET ── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   /* SCROLL PADDING: Taki navigation bar content ko na chupaye jab kisi link par click ho */
@@ -38,7 +40,7 @@
     line-height: 1.8;
   }
 
-  /* NOISE OVERLAY EFFECT */
+  /* ── NOISE OVERLAY EFFECT ── */
   body::before {
     content: '';
     position: fixed; inset: 0;
@@ -98,24 +100,44 @@
     -webkit-text-stroke: 1px var(--accent);
   }
 
-  /* ── LEGAL SECTIONS STYLING ── */
+  /* ── LEGAL SECTIONS STYLING (CARDS) ── */
   .legal-section {
     background: var(--bg3);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 2.5rem;
     margin-bottom: 3rem;
-    position: relative;
-  }
-  .legal-section::before {
-    content: '';
-    position: absolute; top: 0; left: 0;
-    width: 4px; height: 100%;
-    background: var(--accent);
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
   }
 
+  /* ── MOUSE TRACKING GLOW EFFECT (Matches Index & Payment) ── */
+  .legal-section {
+    position: relative; 
+    overflow: hidden;
+    transition: 0.3s border-color, 0.3s transform, 0.3s box-shadow;
+  }
+  .legal-section::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(0,245,160,.08) 0%, transparent 60%);
+    pointer-events: none;
+    opacity: 0; transition: opacity .3s;
+    z-index: 0;
+  }
+  .legal-section:hover {
+    border-color: var(--accent); 
+    transform: translateY(-5px); 
+    box-shadow: 0 20px 40px rgba(0,0,0,.4); 
+  }
+  .legal-section:hover::after { 
+    opacity: 1; 
+  }
+  /* Ensure content stays above the glow */
+  .legal-section * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── TYPOGRAPHY INSIDE CARDS ── */
   .section-heading {
     font-family: var(--mono);
     font-size: 1.5rem;
@@ -149,12 +171,14 @@
     border: 1px dashed var(--accent);
     border-radius: 4px;
     transition: 0.3s;
+    display: inline-block;
+    margin-top: 5px;
   }
   .mail-link:hover {
     background: rgba(0, 245, 160, 0.1);
   }
 
-  /* ── FOOTER CSS ── */
+  /* ── EXACT SAME FOOTER AS INDEX & PAYMENT ── */
   .main-footer {
     text-align: center;
     padding: 4rem 6vw 3rem 6vw;
@@ -229,29 +253,27 @@
     <ul>
       <li><strong>Clear Scope of Work:</strong> All features and requirements must be documented before starting. If new features are requested after the project begins (Scope Creep), they will be <span class="highlight">estimated and billed separately</span>.</li>
       <li><strong>Revisions & Iterations:</strong> You are entitled to <span class="highlight">up to 3 rounds of revisions</span> for design/development tweaks. Complete redesigns or changes outside the original scope will incur additional charges.</li>
-      <!-- KEYS AND RIGHTS TRANSFER RULE ADDED HERE -->
+      <!-- KEYS AND RIGHTS TRANSFER RULE -->
       <li><strong>Intellectual Property (IP) & Keys Transfer:</strong> I retain full ownership of all code, designs, API keys, and assets created <span class="highlight">until the final payment is cleared</span>. Once the final payment is successfully received, all agreed-upon IP rights, ownership, and credentials will be fully transferred to you.</li>
       <li><strong>Communication & Ghosting:</strong> Timely feedback is crucial. If a client fails to communicate for more than 14 days without prior notice, the project will be put on hold, and a restart fee may apply to resume work.</li>
     </ul>
   </section>
 
-  <!-- 3. REFUND POLICY SECTION -->
-  <!-- Note: Payment.html fetches this EXACT #refund section using JavaScript -->
+  <!-- 3. REFUND POLICY SECTION (Fetched by Payment.html) -->
   <section id="refund" class="legal-section">
     <h2 class="section-title section-heading">// Refund & Payment Policy</h2>
     <p>A fair payment structure protects both the client's investment and the developer's time.</p>
     <ul>
       <li><strong>Advance Payment:</strong> A <span class="highlight">50% advance payment</span> is mandatory to lock your slot and begin the project setup/research.</li>
       
-      <!-- COOL DOWN PERIOD -->
-     <!-- COOL DOWN PERIOD (Updated with Gateway Charge Logic) -->
+      <!-- COOL DOWN PERIOD WITH GATEWAY DEDUCTION LOGIC -->
       <li><strong>24-Hour Cool-Down Period:</strong> I offer a grace period! If you change your mind within <span class="highlight">24 hours of making the advance payment</span> (and provided no actual coding/design work has begun), you are eligible for a full refund, <span class="highlight">minus any third-party payment processing fees 5%</span>, as these are non-refundable by the gateway providers. 
       <br><br>
-      To request a refund during this period, please email me immediately at: 
+      To request a refund during this period, please email me immediately at: <br>
       <a href="mailto:getus.shivam@gmail.com?subject=Refund Request - [Your Name]&body=Hi Shivam,%0D%0A%0D%0AI would like to request a refund for the advance payment made. Please let me know the process.%0D%0A%0D%0AThanks!" class="mail-link">getus.shivam@gmail.com ↗</a>
       </li>
 
-      <!-- POST COOL DOWN LOGIC ADDED HERE -->
+      <!-- POST COOL DOWN LOGIC -->
       <li><strong>Post Cool-Down Period:</strong> If you request a cancellation after the 24-hour grace period, the following rules apply:
         <ul style="margin-top: 10px; margin-bottom: 10px;">
           <li><span class="highlight">If work has NOT started:</span> A <strong>15% cancellation fee</strong> will be deducted from your advance payment to cover administrative and scheduling costs. The remaining amount will be refunded to you.</li>
@@ -291,6 +313,17 @@
     <span style="opacity: 0.7;">— All rights reserved.</span>
   </p>
 </footer>
+
+<!-- ── JAVASCRIPT: MOUSE TRACKING GLOW EFFECT ── -->
+<script>
+  document.querySelectorAll('.legal-section').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      card.style.setProperty('--my', ((e.clientY - r.top)  / r.height * 100) + '%');
+    });
+  });
+</script>
 
 </body>
 </html>
